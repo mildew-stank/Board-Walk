@@ -86,10 +86,10 @@ function setStyle(element, isHighlight) {
     }
 
     if (element.id == "half") {
-        element.style.background = "#c0392b";
+        element.style.background = "#f39c12";
         return;
     }
-    element.style.background = "#e74c3c";
+    element.style.background = "#f1c40f";
 }
 
 window.onload = init;
