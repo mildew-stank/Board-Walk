@@ -31,10 +31,10 @@ const openNotes = {
 };
 
 const scales = {
-    "major": [0, 2, 2, 1, 2, 2, 2, 1],
-    "minor": [0, 2, 1, 2, 2, 1, 2, 2],
-    "pentatonic major": [0, 2, 2, 3, 2, 3],
-    "pentatonic minor": [0, 3, 2, 2, 3, 2],
+    "major": [0, 2, 2, 1, 2, 2, 2],
+    "minor": [0, 2, 1, 2, 2, 1, 2],
+    "pentatonic major": [0, 2, 2, 3, 2],
+    "pentatonic minor": [0, 3, 2, 2, 3],
 };
 
 function init() {
@@ -60,29 +60,28 @@ function onInputChange() {
 function revertNotes() {
     for (let string = 0; string < strings.length; string++) {
         for (let fret = 0; fret < strings[string].length; fret++) {
-            setStyle(strings[string][fret], false);
+            clearStyle(strings[string][fret]);
         }
     }
 }
 
 function highlightNotesOnString(string, open, note, scale) {
-    // TODO: add option to highlight root notes
     const offset = note - open;
     let fret = offset < 0 ? 12 + offset : offset;
+    let isRoot = true;
 
     for (let i = 0; i < scale.length; i++) {
         fret += scale[i];
         fret %= 12;
-
-        if (fret == 0) setStyle(strings[string][12], true);
-        setStyle(strings[string][fret], true);
+        if (fret == 0) setStyle(strings[string][12], isRoot);
+        setStyle(strings[string][fret], isRoot);
+        isRoot = false;
     }
 }
 
-function setStyle(element, isHighlight) {
-    if (!isHighlight) {
-        element.removeAttribute("style");
-        return;
+function setStyle(element, isRoot) {
+    if (isRoot) {
+        element.style.borderRadius = "50% 5% 50% 50%"
     }
 
     if (element.id == "half") {
@@ -90,6 +89,10 @@ function setStyle(element, isHighlight) {
         return;
     }
     element.style.background = "#f1c40f";
+}
+
+function clearStyle(element) {
+    element.removeAttribute("style");
 }
 
 window.onload = init;
