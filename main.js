@@ -1,4 +1,6 @@
 const inputField = document.getElementById("key");
+const aboutButton = document.getElementById("about-button");
+const aboutModal = document.getElementById("modal-background");
 const strings = Array.from(document.getElementsByClassName("string")).map(string => string.getElementsByClassName("note"));
 
 const notes = {
@@ -80,10 +82,7 @@ function highlightNotesOnString(string, open, note, scale) {
 }
 
 function setStyle(element, isRoot) {
-    if (isRoot) {
-        element.style.borderRadius = "50% 5% 50% 50%"
-    }
-
+    if (isRoot) element.style.borderRadius = "50% 5% 50% 50%"
     if (element.id == "half") {
         element.style.background = "#f39c12";
         return;
@@ -95,5 +94,16 @@ function clearStyle(element) {
     element.removeAttribute("style");
 }
 
-window.onload = init;
+function onAboutOpen() {
+    aboutModal.style.display = "flex";
+}
+
+function onAboutClose(event) {
+    if (event.target != aboutModal) return;
+    aboutModal.style.display = "none";
+}
+
+window.addEventListener("load", init)
 inputField.addEventListener("input", onInputChange);
+aboutButton.addEventListener("click", onAboutOpen);
+aboutModal.addEventListener("click", onAboutClose);
