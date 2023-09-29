@@ -222,3 +222,14 @@ ul {
         width: 2rem;
     }
 }
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .note {
+        height: 1rem;
+        width: 1rem;
+    }
+}
