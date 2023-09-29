@@ -2,23 +2,50 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Lobster&display=swap');
 
+html {
+    height: 100%;
+}
+
 body {
     background: #116466;
-    height: 100vh;
+    height: 100%;
     margin: 0;
 }
+
+.top-curve {
+    left: 0;
+    line-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+    .top-curve svg {
+        display: block;
+        height: 180px;
+        position: relative;
+        width: calc(120% + 1.3px);
+        z-index: -1;
+    }
+
+    .top-curve .shape-fill {
+        fill: #d1e8e2;
+    }
 
 h1 {
     color: #71a6a4;
     font-family: Lobster, Helvetica, sans-serif;
-    font-size: 42pt;
+    font-size: 3.5rem;
     font-weight: 800;
     left: 22%;
+    margin: 0;
     position: absolute;
     transform: translate(-50%);
 }
 
-#neck {
+#board {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -34,9 +61,9 @@ h1 {
     box-shadow: 3px 3px 0 #2c353180;
     color: #2c3531;
     font-family: 'Fira Sans', sans-serif;
-    font-size: 12pt;
+    font-size: 1rem;
     font-weight: 400;
-    height: 32px;
+    height: 2rem;
     margin: 16px 8px;
     outline: none;
     text-align: center;
@@ -65,13 +92,13 @@ h1 {
     color: #116466;
     display: flex;
     font-family: 'Fira Sans', sans-serif;
-    font-size: 16pt;
+    font-size: 1.5rem;
     font-weight: 700;
-    height: 32px;
+    height: 2rem;
     justify-content: center;
     margin: 2px 8px;
     text-align: center;
-    width: 32px;
+    width: 2rem;
 }
 
 #marker {
@@ -83,28 +110,6 @@ h1 {
 #half {
     background: #2c3531;
 }
-
-.top-curve {
-    left: 0;
-    line-height: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -1;
-}
-
-    .top-curve svg {
-        display: block;
-        height: 180px;
-        position: relative;
-        width: calc(120% + 1.3px);
-        z-index: -1;
-    }
-
-    .top-curve .shape-fill {
-        fill: #d1e8e2;
-    }
 
 .bottom-curve {
     bottom: 0;
@@ -130,7 +135,7 @@ h1 {
 #about-button {
     background: #bb906b;
     border: none;
-    bottom: 0%;
+    bottom: 0;
     box-shadow: 0 0 0;
     color: #d9b08c;
     cursor: pointer;
@@ -155,6 +160,8 @@ h1 {
     display: flex;
     flex-direction: column;
     margin: auto;
+    max-height: calc(100% - 32px);
+    overflow-y: auto;
 }
 
 .card {
@@ -163,8 +170,9 @@ h1 {
     color: #d1e8e2;
     font-family: 'Fira Sans', sans-serif;
     margin: 8px;
+    max-width: 480px;
     padding: 8px;
-    width: 480px;
+    width: calc(100% - 32px);
 }
 
 h2 {
@@ -194,5 +202,23 @@ ul {
     #about-button {
         background: #d1e8e2;
         color: #116466;
+    }
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .note {
+        font-size: 1rem;
+        height: 1.25rem;
+        margin: 2px 4px;
+        width: 1.25rem;
+    }
+
+    #about-button {
+        height: 2rem;
+        width: 2rem;
     }
 }
