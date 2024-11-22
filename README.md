@@ -3,4 +3,4 @@ Enter a note to highlight all occurrences, or a key to highlight every note in t
 
 Examples: Ab, F#, C. E Minor, G Major, B Pentatonic Minor.
 
-[Boardwalk.pro](https://boardwalk.pro/)
+[Live Link](https://mildew-stank.github.io/Board-Walk)
