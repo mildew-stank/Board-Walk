@@ -32,11 +32,25 @@ const openNotes = {
     5: notes["e"],
 };
 
-const scales = {
+const intervals = {
+    // scales
     "major": [0, 2, 2, 1, 2, 2, 2],
     "minor": [0, 2, 1, 2, 2, 1, 2],
     "pentatonic major": [0, 2, 2, 3, 2],
     "pentatonic minor": [0, 3, 2, 2, 3],
+    // chords
+    "power": [0, 7],
+    "major diad": [0, 4],
+    "minor diad": [0, 3],
+    "major triad": [0, 4, 3],
+    "minor triad": [0, 3, 4],
+    "major seventh": [0, 4, 3, 4],
+    "minor seventh": [0, 3, 4, 3],
+    "diminished": [0, 3, 3],
+    "diminished seventh": [0, 3, 3, 3],
+    "augmented": [0, 4, 4],
+    "augmented seventh": [0, 4, 4, 2],
+    "dominant seventh": [0, 4, 3, 3]
 };
 
 function init() {
@@ -50,11 +64,11 @@ function onInputChange() {
     revertNotes();
 
     if (commands[0] in notes) {
-        const scaleCommand = `${commands[1] || ""} ${commands[2] || ""}`.trim();
-        const scale = scales[scaleCommand] || [0];
+        const intervalCommand = `${commands[1] || ""} ${commands[2] || ""}`.trim();
+        const interval = intervals[intervalCommand] || [0];
 
         for (let i = 0; i < strings.length; i++) {
-            highlightNotesOnString(i, openNotes[i], notes[commands[0]], scale);
+            highlightNotesOnString(i, openNotes[i], notes[commands[0]], interval);
         }
     }
 }
