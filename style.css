@@ -175,6 +175,11 @@ h1 {
     width: calc(100% - 32px);
 }
 
+#chords {
+    display: flex;
+    justify-content: space-between;
+}
+
 h2 {
     margin: 0;
     text-align: center;
