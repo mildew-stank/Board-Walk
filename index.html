@@ -1,123 +1,198 @@
-const inputField = document.getElementById("key");
-const aboutButton = document.getElementById("about-button");
-const aboutModal = document.getElementById("modal-background");
-const strings = Array.from(document.getElementsByClassName("string")).map(string => string.getElementsByClassName("note"));
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Board Walk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="top-curve">
+            <svg data-name="Layer 1"
+                 xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 1200 120"
+                 preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                      class="shape-fill"></path>
+            </svg>
+        </div>
+        <h1>Board Walk</h1>
+    </header>
 
-const notes = {
-    "a": 0,
-    "a#": 1,
-    "bb": 1,
-    "b": 2,
-    "c": 3,
-    "c#": 4,
-    "db": 4,
-    "d": 5,
-    "d#": 6,
-    "eb": 6,
-    "e": 7,
-    "f": 8,
-    "f#": 9,
-    "gb": 9,
-    "g": 10,
-    "g#": 11,
-    "ab": 11,
-};
+    <section id="board">
+        <input type="text" id="key" name="key" placeholder="e.g. E Minor" />
+        <div class="string">
+            <div class="note">E</div>
+            <div class="note">F</div>
+            <div class="note" id="half"></div>
+            <div class="note">G</div>
+            <div class="note" id="half"></div>
+            <div class="note">A</div>
+            <div class="note" id="half"></div>
+            <div class="note">B</div>
+            <div class="note">C</div>
+            <div class="note" id="half"></div>
+            <div class="note">D</div>
+            <div class="note" id="half"></div>
+            <div class="note">E</div>
+        </div>
 
-const openNotes = {
-    0: notes["e"],
-    1: notes["b"],
-    2: notes["g"],
-    3: notes["d"],
-    4: notes["a"],
-    5: notes["e"],
-};
+        <div class="string">
+            <div class="note">B</div>
+            <div class="note">C</div>
+            <div class="note" id="half"></div>
+            <div class="note">D</div>
+            <div class="note" id="half"></div>
+            <div class="note">E</div>
+            <div class="note">F</div>
+            <div class="note" id="half"></div>
+            <div class="note">G</div>
+            <div class="note" id="half"></div>
+            <div class="note">A</div>
+            <div class="note" id="half"></div>
+            <div class="note">B</div>
+        </div>
 
-const intervals = {
-    // scales
-    "major": [0, 2, 2, 1, 2, 2, 2],
-    "minor": [0, 2, 1, 2, 2, 1, 2],
-    "pentatonic major": [0, 2, 2, 3, 2],
-    "pentatonic minor": [0, 3, 2, 2, 3],
-    // chords
-    "power": [0, 7],
-    "major diad": [0, 4],
-    "minor diad": [0, 3],
-    "major triad": [0, 4, 3],
-    "minor triad": [0, 3, 4],
-    "major seventh": [0, 4, 3, 4],
-    "minor seventh": [0, 3, 4, 3],
-    "diminished": [0, 3, 3],
-    "diminished seventh": [0, 3, 3, 3],
-    "augmented": [0, 4, 4],
-    "augmented seventh": [0, 4, 4, 2],
-    "dominant seventh": [0, 4, 3, 3]
-};
+        <div class="string">
+            <div class="note">G</div>
+            <div class="note" id="half"></div>
+            <div class="note">A</div>
+            <div class="note" id="half"></div>
+            <div class="note">B</div>
+            <div class="note">C</div>
+            <div class="note" id="half"></div>
+            <div class="note">D</div>
+            <div class="note" id="half"></div>
+            <div class="note">E</div>
+            <div class="note">F</div>
+            <div class="note" id="half"></div>
+            <div class="note">G</div>
+        </div>
 
-function init() {
-    inputField.value = "";
-}
+        <div class="string">
+            <div class="note">D</div>
+            <div class="note" id="half"></div>
+            <div class="note">E</div>
+            <div class="note">F</div>
+            <div class="note" id="half"></div>
+            <div class="note">G</div>
+            <div class="note" id="half"></div>
+            <div class="note">A</div>
+            <div class="note" id="half"></div>
+            <div class="note">B</div>
+            <div class="note">C</div>
+            <div class="note" id="half"></div>
+            <div class="note">D</div>
+        </div>
 
-function onInputChange() {
-    const commands = this.value.toLowerCase().split(" ");
+        <div class="string">
+            <div class="note">A</div>
+            <div class="note" id="half"></div>
+            <div class="note">B</div>
+            <div class="note">C</div>
+            <div class="note" id="half"></div>
+            <div class="note">D</div>
+            <div class="note" id="half"></div>
+            <div class="note">E</div>
+            <div class="note">F</div>
+            <div class="note" id="half"></div>
+            <div class="note">G</div>
+            <div class="note" id="half"></div>
+            <div class="note">A</div>
+        </div>
 
-    commands.length = 3;
-    revertNotes();
+        <div class="string">
+            <div class="note">E</div>
+            <div class="note">F</div>
+            <div class="note" id="half"></div>
+            <div class="note">G</div>
+            <div class="note" id="half"></div>
+            <div class="note">A</div>
+            <div class="note" id="half"></div>
+            <div class="note">B</div>
+            <div class="note">C</div>
+            <div class="note" id="half"></div>
+            <div class="note">D</div>
+            <div class="note" id="half"></div>
+            <div class="note">E</div>
+        </div>
 
-    if (commands[0] in notes) {
-        const intervalCommand = `${commands[1] || ""} ${commands[2] || ""}`.trim();
-        const interval = intervals[intervalCommand] || [0];
+        <div id="markers">
+            <div class="note" id="marker">OPEN</div>
+            <div class="note" id="marker"></div>
+            <div class="note" id="marker"></div>
+            <div class="note" id="marker">3</div>
+            <div class="note" id="marker"></div>
+            <div class="note" id="marker">5</div>
+            <div class="note" id="marker"></div>
+            <div class="note" id="marker">7</div>
+            <div class="note" id="marker"></div>
+            <div class="note" id="marker">9</div>
+            <div class="note" id="marker"></div>
+            <div class="note" id="marker"></div>
+            <div class="note" id="marker">12</div>
+        </div>
+    </section>
 
-        for (let i = 0; i < strings.length; i++) {
-            highlightNotesOnString(i, openNotes[i], notes[commands[0]], interval);
-        }
-    }
-}
+    <footer>
+        <div class="bottom-curve">
+            <svg data-name="Layer 1"
+                 xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 1200 120"
+                 preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                      class="shape-fill"></path>
+            </svg>
+        </div>
+        <button class="note" id="about-button">?</button>
+    </footer>
 
-function revertNotes() {
-    for (let string = 0; string < strings.length; string++) {
-        for (let fret = 0; fret < strings[string].length; fret++) {
-            clearStyle(strings[string][fret]);
-        }
-    }
-}
+    <div id="modal-background">
+        <div id="modal">
+            <div class="card">
+                <h2>About</h2>
+                <p>Board Walk is meant to help you learn the fretboard of a guitar, and how to play in key. Type the name of a key into the search bar and corresponding notes will be highlighted.</p>
+            </div>
+            <div class="card">
+                <h2>Supported keys</h2>
+                <ul>
+                    <li>Major</li>
+                    <li>Minor</li>
+                    <li>Pentatonic Major</li>
+                    <li>Pentatonic Minor</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>Supported chords</h2>
+                <div id="chords">
+                    <ul>
+                        <li>Major Triad</li>
+                        <li>Minor Triad</li>
+                        <li>Major Seventh</li>
+                        <li>Minor Seventh</li>
+                    </ul>
+                    <ul>
+                        <li>Power</li>
+                        <li>Dominant Seventh</li>
+                        <li>Diminished</li>
+                        <li>Diminished Seventh</li>
+                    </ul>
+                    <ul>
+                        <li>Major Diad</li>
+                        <li>Minor Diad</li>
+                        <li>Augmented</li>
+                        <li>Augmented Seventh</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Contribute</h2>
+                <a href="https://github.com/mildew-stank/Board-Walk">Github.com/mildew-stank/Board-Walk</a>
+            </div>
+        </div>
+    </div>
 
-function highlightNotesOnString(string, open, note, scale) {
-    const offset = note - open;
-    let fret = offset < 0 ? 12 + offset : offset;
-    let isRoot = true;
-
-    for (let i = 0; i < scale.length; i++) {
-        fret += scale[i];
-        fret %= 12;
-        if (fret == 0) setStyle(strings[string][12], isRoot);
-        setStyle(strings[string][fret], isRoot);
-        isRoot = false;
-    }
-}
-
-function setStyle(element, isRoot) {
-    if (isRoot) element.style.borderRadius = "50% 5% 50% 50%"
-    if (element.id == "half") {
-        element.style.background = "#f39c12";
-        return;
-    }
-    element.style.background = "#f1c40f";
-}
-
-function clearStyle(element) {
-    element.removeAttribute("style");
-}
-
-function onAboutOpen() {
-    aboutModal.style.display = "flex";
-}
-
-function onAboutClose(event) {
-    if (event.target != aboutModal) return;
-    aboutModal.style.display = "none";
-}
-
-window.addEventListener("load", init)
-inputField.addEventListener("input", onInputChange);
-aboutButton.addEventListener("click", onAboutOpen);
-aboutModal.addEventListener("click", onAboutClose);
+    <script src="main.js"></script>
+</body>
+</html>
