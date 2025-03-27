@@ -189,6 +189,10 @@ p {
   margin: 1rem;
 }
 
+a {
+  color: var(--ocean);
+}
+
 ul {
   padding-left: 0;
   list-style-type: none;
