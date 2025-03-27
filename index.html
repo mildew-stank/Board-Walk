@@ -1,198 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Board Walk</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
     <header>
-        <div class="top-curve">
-            <svg data-name="Layer 1"
-                 xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 1200 120"
-                 preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                      class="shape-fill"></path>
-            </svg>
-        </div>
-        <h1>Board Walk</h1>
+      <svg
+        id="headerWave"
+        viewBox="0 0 508 42.333"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m0 21.167s84.118 22.862 127 21.15c36.333-1.4506 69.487-25.36 105.83-26.442 28.701-0.85388 55.954 16.163 84.667 15.875 43.24-0.43344 83.766-27.314 127-26.458 21.814 0.43179 63.5 15.875 63.5 15.875v-21.167h-508z"
+          fill="currentcolor"
+        />
+      </svg>
+      <h1>Board Walk</h1>
     </header>
-
-    <section id="board">
-        <input type="text" id="key" name="key" placeholder="e.g. E Minor" />
-        <div class="string">
-            <div class="note">E</div>
-            <div class="note">F</div>
-            <div class="note" id="half"></div>
-            <div class="note">G</div>
-            <div class="note" id="half"></div>
-            <div class="note">A</div>
-            <div class="note" id="half"></div>
-            <div class="note">B</div>
-            <div class="note">C</div>
-            <div class="note" id="half"></div>
-            <div class="note">D</div>
-            <div class="note" id="half"></div>
-            <div class="note">E</div>
-        </div>
-
-        <div class="string">
-            <div class="note">B</div>
-            <div class="note">C</div>
-            <div class="note" id="half"></div>
-            <div class="note">D</div>
-            <div class="note" id="half"></div>
-            <div class="note">E</div>
-            <div class="note">F</div>
-            <div class="note" id="half"></div>
-            <div class="note">G</div>
-            <div class="note" id="half"></div>
-            <div class="note">A</div>
-            <div class="note" id="half"></div>
-            <div class="note">B</div>
-        </div>
-
-        <div class="string">
-            <div class="note">G</div>
-            <div class="note" id="half"></div>
-            <div class="note">A</div>
-            <div class="note" id="half"></div>
-            <div class="note">B</div>
-            <div class="note">C</div>
-            <div class="note" id="half"></div>
-            <div class="note">D</div>
-            <div class="note" id="half"></div>
-            <div class="note">E</div>
-            <div class="note">F</div>
-            <div class="note" id="half"></div>
-            <div class="note">G</div>
-        </div>
-
-        <div class="string">
-            <div class="note">D</div>
-            <div class="note" id="half"></div>
-            <div class="note">E</div>
-            <div class="note">F</div>
-            <div class="note" id="half"></div>
-            <div class="note">G</div>
-            <div class="note" id="half"></div>
-            <div class="note">A</div>
-            <div class="note" id="half"></div>
-            <div class="note">B</div>
-            <div class="note">C</div>
-            <div class="note" id="half"></div>
-            <div class="note">D</div>
-        </div>
-
-        <div class="string">
-            <div class="note">A</div>
-            <div class="note" id="half"></div>
-            <div class="note">B</div>
-            <div class="note">C</div>
-            <div class="note" id="half"></div>
-            <div class="note">D</div>
-            <div class="note" id="half"></div>
-            <div class="note">E</div>
-            <div class="note">F</div>
-            <div class="note" id="half"></div>
-            <div class="note">G</div>
-            <div class="note" id="half"></div>
-            <div class="note">A</div>
-        </div>
-
-        <div class="string">
-            <div class="note">E</div>
-            <div class="note">F</div>
-            <div class="note" id="half"></div>
-            <div class="note">G</div>
-            <div class="note" id="half"></div>
-            <div class="note">A</div>
-            <div class="note" id="half"></div>
-            <div class="note">B</div>
-            <div class="note">C</div>
-            <div class="note" id="half"></div>
-            <div class="note">D</div>
-            <div class="note" id="half"></div>
-            <div class="note">E</div>
-        </div>
-
-        <div id="markers">
-            <div class="note" id="marker">OPEN</div>
-            <div class="note" id="marker"></div>
-            <div class="note" id="marker"></div>
-            <div class="note" id="marker">3</div>
-            <div class="note" id="marker"></div>
-            <div class="note" id="marker">5</div>
-            <div class="note" id="marker"></div>
-            <div class="note" id="marker">7</div>
-            <div class="note" id="marker"></div>
-            <div class="note" id="marker">9</div>
-            <div class="note" id="marker"></div>
-            <div class="note" id="marker"></div>
-            <div class="note" id="marker">12</div>
-        </div>
-    </section>
-
+    <main>
+      <nav>
+        <button class="notes" id="help">?</button>
+        <input
+          class="notes"
+          id="prompt"
+          name="key"
+          type="text"
+          placeholder="e.g. E Minor Seventh"
+        />
+      </nav>
+      <div id="fretboardContainer"></div>
+    </main>
     <footer>
-        <div class="bottom-curve">
-            <svg data-name="Layer 1"
-                 xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 1200 120"
-                 preserveAspectRatio="none">
-                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                      class="shape-fill"></path>
-            </svg>
-        </div>
-        <button class="note" id="about-button">?</button>
+      <svg
+        id="footerWave"
+        viewBox="0 0 508 42.333"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m0 21.167s84.118 22.862 127 21.15c36.333-1.4506 69.487-25.36 105.83-26.442 28.701-0.85388 55.954 16.163 84.667 15.875 43.24-0.43344 83.766-27.314 127-26.458 21.814 0.43179 63.5 15.875 63.5 15.875v-21.167h-508z"
+          fill="currentcolor"
+        />
+      </svg>
     </footer>
-
-    <div id="modal-background">
-        <div id="modal">
-            <div class="card">
-                <h2>About</h2>
-                <p>Board Walk is meant to help you learn the fretboard of a guitar, and how to play in key. Type the name of a key into the search bar and corresponding notes will be highlighted.</p>
-            </div>
-            <div class="card">
-                <h2>Supported keys</h2>
-                <ul>
-                    <li>Major</li>
-                    <li>Minor</li>
-                    <li>Pentatonic Major</li>
-                    <li>Pentatonic Minor</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h2>Supported chords</h2>
-                <div id="chords">
-                    <ul>
-                        <li>Major Triad</li>
-                        <li>Minor Triad</li>
-                        <li>Major Seventh</li>
-                        <li>Minor Seventh</li>
-                    </ul>
-                    <ul>
-                        <li>Power</li>
-                        <li>Dominant Seventh</li>
-                        <li>Diminished</li>
-                        <li>Diminished Seventh</li>
-                    </ul>
-                    <ul>
-                        <li>Major Diad</li>
-                        <li>Minor Diad</li>
-                        <li>Augmented</li>
-                        <li>Augmented Seventh</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <h2>Contribute</h2>
-                <a href="https://github.com/mildew-stank/Board-Walk">Github.com/mildew-stank/Board-Walk</a>
-            </div>
+    <div id="modalContainer">
+      <div id="modal">
+        <div id="topBar">
+        <button class="notes" id="close">✖</button></div>
+        <div class="card">
+          <h2>About</h2>
+          <section>
+            <p>
+              Board Walk is meant to help you learn the fretboard of a guitar.
+              Type the name of a note, scale, or chord in the search bar to
+              highlight the relevant notes.
+            </p>
+          </section>
         </div>
+        <div class="card">
+          <h2>Scales</h2>
+          <section>
+            <ul>
+              <li>Major</li>
+              <li>Minor</li>
+              <li>Pentatonic Major</li>
+              <li>Pentatonic Minor</li>
+            </ul>
+          </section>
+        </div>
+        <div class="card">
+          <h2>Chords</h2>
+          <section>
+            <ul>
+              <li>Major Triad</li>
+              <li>Minor Triad</li>
+              <li>Major Seventh</li>
+              <li>Minor Seventh</li>
+            </ul>
+            <ul>
+              <li>Power</li>
+              <li>Dominant Seventh</li>
+              <li>Diminished</li>
+              <li>Diminished Seventh</li>
+            </ul>
+            <ul>
+              <li>Major Diad</li>
+              <li>Minor Diad</li>
+              <li>Augmented</li>
+              <li>Augmented Seventh</li>
+            </ul>
+          </section>
+        </div>
+      </div>
     </div>
-
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
