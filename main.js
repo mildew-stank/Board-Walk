@@ -51,6 +51,7 @@ const intervals = {
   "pentatonic minor": [0, 3, 2, 2, 3],
   // chords
   "power": [0, 7],
+  "power chord": [0, 7],
   "major diad": [0, 4],
   "minor diad": [0, 3],
   "major triad": [0, 4, 3],
