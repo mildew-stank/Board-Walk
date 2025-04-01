@@ -1,0 +1,20 @@
+{
+  "name": "Board Walk",
+  "short_name": "BoardWalk",
+  "icons": [
+    {
+      "src": "icons/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "../index.html",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "display": "standalone",
+  "background_color": "#116466"
+}
