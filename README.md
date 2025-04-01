@@ -6,4 +6,4 @@ Example inputs:
 - Chords: `D Major Triad`, `Eb Diminished Seventh`, `F# Power`.
 - Keys: `G# Minor`, `A Major`, `Bb Pentatonic Minor`.
 
-[Live Link](https://mildew-stank.github.io/Board-Walk)
+This website is live at [Boardwalk.lol](https://www.boardwalk.lol/) and [mildew-stank.github.io/Board-Walk](https://mildew-stank.github.io/Board-Walk).
