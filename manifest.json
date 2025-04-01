@@ -16,5 +16,6 @@
   "start_url": "https://www.boardwalk.lol/",
   "display_override": ["window-controls-overlay", "standalone"],
   "display": "standalone",
+  "orientation": "natural",
   "background_color": "#116466"
 }
