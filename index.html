@@ -1,106 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Board Walk</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="style.css" rel="stylesheet" />
-    <script>navigator.serviceWorker.register("service-worker.js")</script> 
+    <script>navigator.serviceWorker.register("service-worker.js")</script>
     <link rel="manifest" href="manifest.json" />
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <svg
-        id="headerWave"
-        viewBox="0 0 508 42.333"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="m0 21.167s84.118 22.862 127 21.15c36.333-1.4506 69.487-25.36 105.83-26.442 28.701-0.85388 55.954 16.163 84.667 15.875 43.24-0.43344 83.766-27.314 127-26.458 21.814 0.43179 63.5 15.875 63.5 15.875v-21.167h-508z"
-          fill="currentcolor"
-        />
-      </svg>
-      <h1>Board Walk</h1>
+        <svg id="headerWave"
+             viewBox="0 0 508 42.333"
+             preserveAspectRatio="none"
+             xmlns="http://www.w3.org/2000/svg">
+            <path d="m0 21.167s84.118 22.862 127 21.15c36.333-1.4506 69.487-25.36 105.83-26.442 28.701-0.85388 55.954 16.163 84.667 15.875 43.24-0.43344 83.766-27.314 127-26.458 21.814 0.43179 63.5 15.875 63.5 15.875v-21.167h-508z"
+                  fill="currentcolor" />
+        </svg>
+        <h1>Board Walk</h1>
     </header>
     <main>
-      <nav>
-        <button class="notes" id="help">?</button>
-        <input
-          class="notes"
-          id="prompt"
-          name="key"
-          type="text"
-          autocomplete="off"
-          placeholder="e.g. E Minor Seventh"
-        />
-      </nav>
-      <div id="fretboardContainer"></div>
+        <nav>
+            <button class="notes" id="help">?</button>
+            <input class="notes"
+                   id="prompt"
+                   name="key"
+                   type="text"
+                   autocomplete="off"
+                   placeholder="e.g. E Minor Seventh" />
+        </nav>
+        <div id="fretboardContainer" class="sixString"></div>
     </main>
     <footer>
-      <svg
-        id="footerWave"
-        viewBox="0 0 508 42.333"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="m0 21.167s84.118 22.862 127 21.15c36.333-1.4506 69.487-25.36 105.83-26.442 28.701-0.85388 55.954 16.163 84.667 15.875 43.24-0.43344 83.766-27.314 127-26.458 21.814 0.43179 63.5 15.875 63.5 15.875v-21.167h-508z"
-          fill="currentcolor"
-        />
-      </svg>
+        <svg id="footerWave"
+             viewBox="0 0 508 42.333"
+             preserveAspectRatio="none"
+             xmlns="http://www.w3.org/2000/svg">
+            <path d="m0 21.167s84.118 22.862 127 21.15c36.333-1.4506 69.487-25.36 105.83-26.442 28.701-0.85388 55.954 16.163 84.667 15.875 43.24-0.43344 83.766-27.314 127-26.458 21.814 0.43179 63.5 15.875 63.5 15.875v-21.167h-508z"
+                  fill="currentcolor" />
+        </svg>
     </footer>
     <div id="modalContainer">
-      <div id="modal">
-        <div id="topBar">
-        <button class="notes" id="close">✖</button></div>
-        <div class="card">
-          <h2>About</h2>
-          <section>
-            <p>
-              Board Walk is meant to help you learn the fretboard of a guitar.
-              Type the name of a note, scale, or chord in the search bar to
-              highlight the relevant notes. It's also <a href="https://github.com/mildew-stank/Board-Walk/tree/main">open source</a>.
-            </p>
-          </section>
+        <div id="modal">
+            <div id="topBar">
+                <button class="notes" id="close">✖</button>
+            </div>
+            <div class="card">
+                <h2>About</h2>
+                <section>
+                    <p>
+                        Board Walk is meant to help you learn your fretboard.
+                        Type the name of a note, scale, or chord in the search bar to
+                        highlight the relevant notes. It's also <a href="https://github.com/mildew-stank/Board-Walk/tree/main">open source</a>.
+                    </p>
+                </section>
+            </div>
+            <div class="card">
+                <h2>Scales</h2>
+                <section>
+                    <ul>
+                        <li>Major</li>
+                        <li>Minor</li>
+                        <li>Pentatonic Major</li>
+                        <li>Pentatonic Minor</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="card">
+                <h2>Chords</h2>
+                <section>
+                    <ul>
+                        <li>Major Triad</li>
+                        <li>Minor Triad</li>
+                        <li>Major Seventh</li>
+                        <li>Minor Seventh</li>
+                    </ul>
+                    <ul>
+                        <li>Power</li>
+                        <li>Dominant Seventh</li>
+                        <li>Diminished</li>
+                        <li>Diminished Seventh</li>
+                    </ul>
+                    <ul>
+                        <li>Major Diad</li>
+                        <li>Minor Diad</li>
+                        <li>Augmented</li>
+                        <li>Augmented Seventh</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="card">
+                <h2>Instruments</h2>
+                <section>
+                    <ul>
+                        <li>Guitar</li>
+                        <li>Bass</li>
+                        <li>Ukulele</li>
+                        <li>Violin</li>
+                    </ul>
+                    <ul>
+                        <li>Viola</li>
+                        <li>Cello</li>
+                        <li>Mandolin</li>
+                    </ul>
+                </section>
+            </div>
         </div>
-        <div class="card">
-          <h2>Scales</h2>
-          <section>
-            <ul>
-              <li>Major</li>
-              <li>Minor</li>
-              <li>Pentatonic Major</li>
-              <li>Pentatonic Minor</li>
-            </ul>
-          </section>
-        </div>
-        <div class="card">
-          <h2>Chords</h2>
-          <section>
-            <ul>
-              <li>Major Triad</li>
-              <li>Minor Triad</li>
-              <li>Major Seventh</li>
-              <li>Minor Seventh</li>
-            </ul>
-            <ul>
-              <li>Power</li>
-              <li>Dominant Seventh</li>
-              <li>Diminished</li>
-              <li>Diminished Seventh</li>
-            </ul>
-            <ul>
-              <li>Major Diad</li>
-              <li>Minor Diad</li>
-              <li>Augmented</li>
-              <li>Augmented Seventh</li>
-            </ul>
-          </section>
-        </div>
-      </div>
     </div>
     <script src="main.js"></script>
-  </body>
+</body>
 </html>
