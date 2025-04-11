@@ -57,6 +57,7 @@ nav {
 
     #help:hover {
         background-color: var(--foam);
+        cursor: pointer;
     }
 
 #prompt {
@@ -177,6 +178,7 @@ nav {
 
     #close:hover {
         color: var(--highlight);
+        cursor: pointer;
     }
 
 .card {
