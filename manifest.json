@@ -8,7 +8,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "pwa/media192/512.png",
+      "src": "pwa/media/512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -16,6 +16,7 @@
   "start_url": "https://www.boardwalk.lol",
   "scope": "https://www.boardwalk.lol",
   "id": "/",
+  "display_override": [ "standalone", "window-controls-overlay", "minimal-ui" ],
   "display": "standalone",
   "launch_handler": {
     "client_mode": [ "navigate-new", "auto" ]
