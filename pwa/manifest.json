@@ -1,0 +1,31 @@
+{
+  "name": "Board Walk",
+  "short_name": "BoardWalk",
+  "icons": [
+    {
+      "src": "192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://www.boardwalk.lol",
+  "display_override": "standalone",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#116466",
+  "description": "Board Walk is a visualization tool meant to help you learn the fretboard or fingerboard of various instruments.",
+  "id": "/",
+  "theme_color": "#2c3531",
+  "launch_handler": {
+    "client_mode": [ "navigate-new", "auto" ]
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [ "music", "education", "utilities" ],
+  "scope": "https://www.boardwalk.lol"
+}

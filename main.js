@@ -43,6 +43,8 @@ const intervals = {
     "minor": [0, 2, 1, 2, 2, 1, 2],
     "pentatonic major": [0, 2, 2, 3, 2],
     "pentatonic minor": [0, 3, 2, 2, 3],
+    "harmonic major": [0, 2, 2, 1, 3, 2, 2],
+    "harmonic minor": [0, 2, 1, 2, 2, 1, 3],
     // chords
     "power": [0, 7],
     "power chord": [0, 7],
