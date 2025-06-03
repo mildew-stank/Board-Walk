@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "lol.boardwalk.twa",
+        "sha256_cert_fingerprints": ["E3:70:E3:9A:EE:9D:AA:0F:2A:41:4A:7A:89:24:50:32:3C:70:F9:F4:A1:59:EE:EE:A1:12:5E:65:40:73:A9:CF"]
+      }
+    }]
