@@ -6,7 +6,26 @@
     <title>Board Walk</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="style.css" rel="stylesheet" />
-    <script>navigator.serviceWorker.register("pwa/service-worker.js")</script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker
+                .register("pwa/service-worker.js")
+                .then((registration) => {
+                    registration.addEventListener("updatefound", () => {
+                        const installingWorker = registration.installing;
+                        console.log(
+                            "Service worker installing:",
+                            installingWorker,
+                        );
+                    });
+                })
+                .catch((error) => {
+                    console.error(`Service worker failed: ${error}`);
+                });
+        } else {
+            console.error("Service workers not supported.");
+        }
+    </script>
     <link rel="manifest" href="pwa/manifest.json" />
 </head>
 <body>
