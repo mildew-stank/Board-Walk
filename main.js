@@ -17,7 +17,7 @@ const instruments = {
     "ukulele": "gcea",
     "viola": "cgda",
     "violin": "gdae",
-}
+};
 const notes = {
     "a": 0,
     "a#": 1,
@@ -208,10 +208,20 @@ function handlePortrait(event) {
 function handleHelpButton() {
     modalContainer.style.visibility = "visible";
     modalContainer.scrollTop = 0;
+    history.pushState({ help: 1 }, "");
 }
 
 function handleCloseButton(event) {
     if (event.target != modalContainer && event.target != closeButton) {
+        return;
+    }
+    modalContainer.style.visibility = "hidden";
+    history.back();
+}
+
+function handlePopstate(event) {
+    if (event.state) {
+        modalContainer.style.visibility = "visible";
         return;
     }
     modalContainer.style.visibility = "hidden";
@@ -222,3 +232,4 @@ userPrompt.addEventListener("input", handleInputChange);
 helpButton.addEventListener("click", handleHelpButton);
 closeButton.addEventListener("click", handleCloseButton);
 modalContainer.addEventListener("click", handleCloseButton);
+window.addEventListener("popstate", handlePopstate);

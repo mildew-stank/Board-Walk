@@ -144,31 +144,37 @@ nav {
     height: 100vh;
 }
 
+#modalMargins {
+    margin: auto;
+}
+
 #modal {
     background-color: #71a6a4cc;
     color: var(--black);
     font-family: "Fira Sans", sans-serif;
-    border-radius: 1em;
+    border-radius: 0em 0em 1em 1em;
     max-width: 46rem;
-    margin: auto;
+    margin-bottom: auto;
     display: flex;
     flex-flow: row wrap;
-    border-top: solid var(--black) 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 #topBar {
-    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
+    border-radius: 1em 1em 0em 0em;
+    background: var(--black);
+    max-width: 46rem;
+    margin-top: 1em;
+    width: 100%;
 }
 
 #close {
     width: 2rem;
     height: 2rem;
     color: var(--foam);
-    border-radius: 100rem;
-    margin-top: -2rem;
     align-self: flex-end;
     border: none;
     background: none;
