@@ -1,8 +1,10 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "lol.boardwalk.twa",
-        "sha256_cert_fingerprints": ["E3:70:E3:9A:EE:9D:AA:0F:2A:41:4A:7A:89:24:50:32:3C:70:F9:F4:A1:59:EE:EE:A1:12:5E:65:40:73:A9:CF"]
-      }
-    }]
+[
+  {
+    "relation": [ "delegate_permission/common.handle_all_urls" ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "lol.boardwalk.www.twa",
+      "sha256_cert_fingerprints": [ "8D:1A:26:4F:1C:48:60:5B:64:DD:D5:44:93:E4:94:FC:97:70:56:B9:10:AF:6C:8A:E5:7B:55:C8:46:DD:AD:79" ]
+    }
+  }
+]

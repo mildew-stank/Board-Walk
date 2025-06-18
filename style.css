@@ -1,4 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Lobster&display=swap");
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lobster';
+    src: url('fonts/Lobster-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
 
 :root {
     --foam: #d1e8e2;
@@ -29,7 +48,6 @@ h1 {
     color: var(--weakfoam);
     font-family: Lobster, Helvetica, sans-serif;
     font-size: min(6vh, 5vw);
-    font-weight: 800;
     margin: 0;
     position: absolute;
     top: 0%;
