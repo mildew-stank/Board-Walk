@@ -7,6 +7,7 @@ const userPrompt = document.getElementById("prompt");
 const helpButton = document.getElementById("help");
 const closeButton = document.getElementById("close");
 const modalContainer = document.getElementById("modalContainer");
+const modalMargins = document.getElementById("modalMargins");
 const fretboardContainer = document.getElementById("fretboardContainer");
 const stringLength = 13;
 const instruments = {
@@ -212,7 +213,7 @@ function handleHelpButton() {
 }
 
 function handleCloseButton(event) {
-    if (event.target != modalContainer && event.target != closeButton) {
+    if (event.target != modalContainer && event.target != modalMargins && event.target != closeButton) {
         return;
     }
     modalContainer.style.visibility = "hidden";
