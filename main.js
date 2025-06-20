@@ -209,15 +209,22 @@ function handlePortrait(event) {
 function handleHelpButton() {
     modalContainer.style.visibility = "visible";
     modalContainer.scrollTop = 0;
-    history.pushState({ help: 1 }, "");
+    if (!history.state || !history.state.help) {
+        history.pushState({ help: 1 }, "");
+    }
 }
 
 function handleCloseButton(event) {
-    if (event.target != modalContainer && event.target != modalMargins && event.target != closeButton) {
+    if (event.target != modalContainer &&
+        event.target != modalMargins &&
+        event.target != closeButton
+    ) {
         return;
     }
-    modalContainer.style.visibility = "hidden";
-    history.back();
+    if (modalContainer.style.visibility == "visible" && history.state && history.state.help) {
+        modalContainer.style.visibility = "hidden";
+        history.back();
+    }
 }
 
 function handlePopstate(event) {
