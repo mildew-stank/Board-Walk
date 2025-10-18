@@ -228,7 +228,7 @@ function handleCloseButton(event) {
 }
 
 function handlePopstate(event) {
-    if (event.state) {
+    if (event.state && event.state.help) {
         modalContainer.style.visibility = "visible";
         return;
     }
